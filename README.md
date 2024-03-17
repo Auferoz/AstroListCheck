@@ -2,5 +2,7 @@
 
 
 ## 🚀 Project Structure
-> 📌 Games 2024
-![just-the-basics](./public/ScreenCapture.jpg)
+
+> 📌 Games 2024 - ScreenCapture
+
+![just-the-basics](./public/ScreenCapture.jpeg)
