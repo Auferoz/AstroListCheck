@@ -1,4 +1,6 @@
 # Astro List Check
 
 
-![just-the-basics](./public/710shots_so.png)
+## 🚀 Project Structure
+> 📌 Games 2024
+![just-the-basics](./public/ScreenCapture.jpg)

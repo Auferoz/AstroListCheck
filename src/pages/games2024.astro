@@ -12,6 +12,13 @@ import Navbar from '../components/Navbar.astro';
 		<Navbar />
 	</nav>
 	<main class="container mx-auto p-16">
-		<h1>Inicio</h1>
+		<section class="pb-10">
+			<h1 class="text-3xl font-sans font-normal">
+				> Games List <span class="text-xl font-light">2024</span>
+			</h1>
+		</section>
+		<section class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+			<Card />
+		</section>
 	</main>
 </Layout>

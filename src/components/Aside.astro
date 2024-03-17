@@ -1,0 +1,33 @@
+<article
+  class="bg-gray-900 shadow-xl w-[auto] rounded-xl px-4 py-4 absolute left-4 top-4 cursor-pointer"
+  id="toggleBtn"
+  @click="toggleBtn()"
+>
+  <h2 class="font-bold text-lg">
+    <i class="fa-solid fa-bars animate-pulse i"></i>
+    <i class="fa-solid fa-bars-staggered animate-pulse i hidden"></i>
+  </h2>
+  <section class="place-items-start gap-4 text-gray-400 hidden">
+    <button
+      class="w-full text-left flex gap-4 hover:bg-slate-400 px-2 py-2 rounded-md hover:text-gray-800 transition-all"
+    >
+      <aside>
+        <span>🏠</span>
+        <span>Dashboard</span>
+      </aside>
+      <span></span>
+    </button>
+    <button
+      class="w-full text-left flex gap-4 hover:bg-slate-400 px-2 py-2 rounded-md hover:text-gray-800 transition-all justify-between"
+    >
+      <aside>
+        <span>🎮</span>
+        <span>+Games</span>
+      </aside>
+      <span
+        class="bg-green-300 px-2 py-1 rounded-full text-gray-900 font-mono text-xs animate-bounce"
+        >13</span
+      >
+    </button>
+  </section>
+</article>

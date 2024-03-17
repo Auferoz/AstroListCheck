@@ -3,39 +3,36 @@ import { supabase } from "../services/supabase";
 
 let { data: Games_2024, error } = await supabase.from("Games_2024").select("*");
 
-console.log(Games_2024, error);
+// console.log(Games_2024, error);
 ---
 
 {
   Games_2024.sort((a, b) => a.id - b.id).map((data) => (
     <article>
-      <div class="group relative rounded-md leading-5 overflow-hidden transition-all duration-150 ease-linear border-2">
+      <div class="group relative rounded-md leading-5 overflow-hidden transition-all duration-150 ease-linear border">
         <a>
-          <img
-            src={data.poster}
-            width="100%"
-          />
+          <img src={data.poster} width="100%" />
         </a>
-        <div class="w-full absolute bottom-0 left-0 pt-28 px-3 pb-1 bg-gradient-to-b from-gray-700/5 to-blue-950/90 to-100% group-hover:from-gray-700/5 group-hover:to-blue-950/95 group-hover:to-50% group-hover:transition-all group-hover:duration-150 group-hover:ease-linear">
-          <div class="flex items-center justify-between py-2 px-0">
+        <div class="w-full absolute bottom-0 left-0 pt-8 px-3 pb-1 bg-gradient-to-b from-gray-700/5 to-slate-950/80 to-100% group-hover:from-gray-700/5 group-hover:to-slate-950/80 group-hover:to-75% group-hover:transition-all group-hover:duration-150 group-hover:ease-linear group-hover:opacity-100">
+          <div class="flex items-center justify-between py-2 px-0 opacity-5 group-hover:opacity-100 transition-all">
             <div class="left-content">
-              <h3 class="font-nunito text-white m-0 font-semibold text-lg truncate w-48 group-hover:whitespace-normal group-hover:overflow-visible">
+              <h3 class="font-nunito text-white m-0 font-semibold text-lg truncate">
                 {data.title}
               </h3>
-              <p class="font-sans text-cyan-400 m-0 font-normal text-xs capitalize truncate w-48 group-hover:whitespace-normal group-hover:overflow-visible">
-                Released - <span>Companie</span>
+              <p class="font-sans text-cyan-400 m-0 font-normal text-xs capitalize truncate">
+                {data.released} - <span>{data.companie}</span>
               </p>
             </div>
           </div>
-          <div class="capitalize max-h-0 opacity-0 border-t-2 border-gray-500/30 overflow-hidden transition-all duration-150 ease-linear group-hover:max-h-52 group-hover:opacity-100 group-hover:py-2 group-hover:px-0">
+          <div class="hidden capitalize h-0 opacity-0 border-t-2 border-gray-500/30 overflow-hidden transition-all duration-150 ease-linear group-hover:h-20 group-hover:opacity-100 group-hover:py-2 group-hover:px-0">
             <p class="font-nunito text-white text-xs m-0 pb-1 truncate">
-              <i class="fa-solid fa-list"/> Estado: {data.state}
+              <i class="fa-solid fa-list" /> Estado: {data.state}
             </p>
             <p class="font-nunito text-white text-xs m-0 pb-1 truncate">
-              <i class="fa-solid fa-star"/> Hour: {data.hours}
+              <i class="fa-solid fa-star" /> Hour: {data.hours}
             </p>
             <p class="font-nunito text-white text-xs m-0 pb-1 truncate">
-              <i class="{game.platform_icon}"/> Fecha Final: {data.date_end}
+              <i class="{game.platform_icon}" /> Fecha Final: {data.date_end}
             </p>
           </div>
         </div>
@@ -43,69 +40,3 @@ console.log(Games_2024, error);
     </article>
   ))
 }
-
-<style>
-  .animated_card img {
-    border-radius: 10px;
-  }
-  .animated_card,
-  .animated_card_2 {
-    display: grid;
-    place-items: center;
-    position: relative;
-    height: 295px;
-    width: 221px;
-    background: #222;
-    border-radius: 10px;
-    cursor: pointer;
-  }
-  .animated_card::before {
-    position: absolute;
-    content: "";
-    height: 295px;
-    width: 221px;
-    background: tomato;
-    border-radius: 15px;
-    z-index: -1;
-    transition: 0.3s;
-    animation: animate 2s linear infinite;
-  }
-  .animated_card:hover::before {
-    height: 300px;
-    width: 226px;
-  }
-  @keyframes animate {
-    50% {
-      filter: hue-rotate(360deg);
-    }
-  }
-  .animated_card_2 {
-    overflow: hidden;
-  }
-  .animated_card_2::before {
-    position: absolute;
-    content: "";
-    width: 50%;
-    height: 180%;
-    background: #fff;
-    transform: rotate(45deg);
-  }
-  .animated_card_2:hover::before {
-    animation: animateBorder 2s linear infinite;
-  }
-  @keyframes animateBorder {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-  .animated_card_2::after {
-    position: absolute;
-    content: "";
-    inset: 2px;
-    background: #222) no-repeat;
-    background-size: contain;
-  }
-</style>
