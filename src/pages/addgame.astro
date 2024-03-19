@@ -1,0 +1,86 @@
+---
+import CornerDownRight from "@/components/icons/corner-down-right.astro";
+import Layout from "@/layouts/Layout.astro";
+import { supabase } from "@/services/supabase";
+
+
+  function SaveGame() {
+    console.log("¡El botón fue clickeado!");
+  }
+          
+---
+
+<Layout title="Agregar Nuevo Game | ALC">
+  <main class="container mx-auto p-16">
+    <section class="pb-10">
+      <h1 class="text-3xl font-sans font-normal flex items-center">
+        <CornerDownRight />
+        Agregar Nuevo Game
+      </h1>
+    </section>
+    <section>
+      <form id="FormSave" class="max-w-sm mr-auto">
+        <select
+          id="years"
+          class="capitalize mb-5 border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-gray-400 focus:ring-blue-500 focus:border-blue-500"
+        >
+          <option>2024</option>
+          <option>2023</option>
+          <option>2022</option>
+        </select>
+        <input
+          type="text"
+          id="title"
+          aria-label="title"
+          class="capitalize mb-5 border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-gray-400 focus:ring-blue-500 focus:border-blue-500"
+          value="title"
+        />
+        <input
+          type="text"
+          id="poster"
+          aria-label="poster"
+          class="capitalize mb-5 border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-gray-400 focus:ring-blue-500 focus:border-blue-500"
+          value="poster"
+        />
+        <input
+          type="text"
+          id="state"
+          aria-label="state"
+          class="capitalize mb-5 border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-gray-400 focus:ring-blue-500 focus:border-blue-500"
+          value="state"
+        />
+        <input
+          type="text"
+          id="hours"
+          aria-label="hours"
+          class="capitalize mb-5 border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-gray-400 focus:ring-blue-500 focus:border-blue-500"
+          value="hours"
+        />
+        <input
+          type="text"
+          id="date_end"
+          aria-label="date_end"
+          class="capitalize mb-5 border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-gray-400 focus:ring-blue-500 focus:border-blue-500"
+          value="date_end"
+        />
+        <input
+          type="text"
+          id="released"
+          aria-label="released"
+          class="capitalize mb-5 border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-gray-400 focus:ring-blue-500 focus:border-blue-500"
+          value="released"
+        />
+        <input
+          type="text"
+          id="companie"
+          aria-label="companie"
+          class="capitalize mb-5 border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-gray-400 focus:ring-blue-500 focus:border-blue-500"
+          value="companie"
+        />
+        <button type="button" onclick="{SaveGame()}" class="border focus:outline-none focus:ring-4 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 bg-gray-800 text-white border-gray-600 hover:bg-gray-700 hover:border-gray-600 focus:ring-gray-700">
+            Guardar
+        </button>
+      </form>
+    </section>
+  </main>
+</Layout>

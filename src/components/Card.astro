@@ -1,5 +1,5 @@
 ---
-import { supabase } from "../services/supabase";
+import { supabase } from "@/services/supabase";
 
 let { data: Games_2024, error } = await supabase.from("Games_2024").select("*");
 
